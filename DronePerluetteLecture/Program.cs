@@ -18,7 +18,7 @@ namespace DronePerluetteLecture
          StreamReader fichierMessage;
          BinaryMessageFormatter formatter = new BinaryMessageFormatter();
 
-         Console.WriteLine("En attente d'un fichier 'Commandes_Mobile.txt'");
+         Console.WriteLine("En attente d'un fichier 'Commande_Mobile.txt'");
          string[] donneesVehicule;
          int ligne = 0;
          
@@ -43,13 +43,14 @@ namespace DronePerluetteLecture
                try
                {
                   fichierMessage = new StreamReader(File.OpenRead("Commande_Mobile.txt"));
+                  messageQueue.Purge();
                }
                catch (Exception)
                {
                   fichierMessage = null;
                }
             } while (fichierMessage == null);
-
+                Console.WriteLine("Traitement du fichier en cours...");
             while (!fichierMessage.EndOfStream)
             {
                donneesVehicule = (fichierMessage.ReadLine()).Split(',');
@@ -107,17 +108,14 @@ namespace DronePerluetteLecture
                               Y = Int32.Parse(donneesVehicule[3]);
                               if (donneesVehicule[0].ToLower() == "voiture")
                               {
-                                 Console.WriteLine(donneesVehicule[0] + " " + ID + " " + X + " " + Y);
                                  messageQueue.Send(new Message(new Voiture(ID, X, Y), formatter));
                               }
                               else if (donneesVehicule[0].ToLower() == "moto")
                               {
-                                 Console.WriteLine(donneesVehicule[0] + " " + ID + " " + X + " " + Y);
                                  messageQueue.Send(new Message(new Moto(ID, X, Y), formatter));
                               }
                               else if (donneesVehicule[0].ToLower() == "camion")
                               {
-                                 Console.WriteLine(donneesVehicule[0] + " " + ID + " " + X + " " + Y);
                                  messageQueue.Send(new Message(new Camion(ID, X, Y), formatter));
                               }
                               else
@@ -143,12 +141,20 @@ namespace DronePerluetteLecture
                }
             }
             fichierMessage.Close();
-            if (System.IO.File.Exists("Commande_Traite.txt"))
+            if (System.IO.File.Exists("Commande_Traitee.txt"))
             {
-               System.IO.File.Delete("Commande_Traite.txt");
+                try
+                {
+                    System.IO.File.Delete("Commande_Traitee.txt");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Vérifier d'avoir les droits sur le dossier et les fichiers concernant le programme");
+                }
+               
             }
-            System.IO.File.Move("Commande_Mobile.txt", "Commande_Traite.txt");
-            Console.WriteLine("En attente d'un fichier 'Commandes_Mobile.txt'");
+            System.IO.File.Move("Commande_Mobile.txt", "Commande_Traitee.txt");
+            Console.WriteLine("En attente d'un fichier 'Commande_Mobile.txt'");
          }
       }
 

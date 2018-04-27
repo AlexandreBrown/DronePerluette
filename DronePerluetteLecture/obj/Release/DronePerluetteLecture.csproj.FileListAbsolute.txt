@@ -1,3 +1,6 @@
+D:\DronePerluette\DronePerluetteLecture\bin\Release\DronePerluetteLecture.exe.config
+D:\DronePerluette\DronePerluetteLecture\bin\Release\DronePerluetteLecture.exe
+D:\DronePerluette\DronePerluetteLecture\bin\Release\DronePerluetteLecture.pdb
 D:\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.csproj.CoreCompileInputs.cache
 D:\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.exe
 D:\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.pdb
