@@ -86,6 +86,7 @@ namespace DronePerluetteAffichage
                                     }
                                     await Task.Run(() => { Thread.Sleep(SleepTimeDefault); });
                                 }
+                                dronePerluetteQueue.Purge();
                             }
                        }
                     }
