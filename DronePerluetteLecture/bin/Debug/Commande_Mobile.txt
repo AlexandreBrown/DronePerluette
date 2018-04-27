@@ -1,5 +1,0 @@
-voiture,0,2,54
-moto,1,64,73
-camion,1,4,10
-camion,2,99,304
-Sleep,100

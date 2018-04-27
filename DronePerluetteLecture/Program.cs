@@ -59,20 +59,19 @@ namespace DronePerluetteLecture
                int ID;
                int X;
                int Y;
-
+               
                // c'est un sleep
                if (donneesVehicule[0].ToLower() == "sleep")
                {
-                  if (donneesVehicule[1] == null)
+                  if (donneesVehicule.Count() == 1)
                   {
-                     Console.WriteLine("Il manque 1 informations à la ligne " + ligne);
+                     Console.WriteLine("Il manque 1 information à la ligne " + ligne);
                   }
                   else
                   {
                      try
                      {
                         Temps = Int32.Parse(donneesVehicule[1]);
-                        Console.WriteLine(Temps); //test
                         messageQueue.Send(new Message(Temps, formatter));
                      }
                      catch (Exception)
@@ -83,61 +82,69 @@ namespace DronePerluetteLecture
                }
                else // Pas un sleep
                {
-                  if (donneesVehicule[1] == null)
-                  {
-                     Console.WriteLine("Il manque 3 informations à la ligne " + ligne);
-                  }
-                  else if (donneesVehicule[2] == null)
-                  {
-                     Console.WriteLine("Il manque 2 informations à la ligne " + ligne);
-                  }
-                  else if (donneesVehicule[3] == null)
-                  {
-                     Console.WriteLine("Il manque 1 information à la ligne " + ligne);
-                  }
-                  else
-                  {
-                     try
-                     {
-                        ID = Int32.Parse(donneesVehicule[1]);
+                    if (donneesVehicule[0] == "")
+                    {
+                        Console.WriteLine("La ligne " + ligne + " ne peut pas être vide.");
+                    }
+                    else if (donneesVehicule[0].ToLower() != "voiture" && donneesVehicule[0].ToLower() != "moto" && donneesVehicule[0].ToLower() != "camion")
+                    {
+                        Console.WriteLine("La ligne " + ligne + " est erronée.");
+                    }
+                    else if (donneesVehicule.Count() == 1 || (donneesVehicule.Count() == 2 && donneesVehicule[1] == "" ))
+                    {
+                        Console.WriteLine("Il manque 3 informations à la ligne " + ligne);
+                    }
+                    else if (donneesVehicule.Count() == 2 || (donneesVehicule.Count() == 3 && donneesVehicule[2] == ""))
+                    {
+                        Console.WriteLine("Il manque 2 informations à la ligne " + ligne);
+                    }
+                    else if (donneesVehicule.Count() == 3 || (donneesVehicule.Count() == 4 && donneesVehicule[3] == ""))
+                    {
+                        Console.WriteLine("Il manque 1 information à la ligne " + ligne);
+                    }
+                    else
+                    {
                         try
                         {
-                           X = Int32.Parse(donneesVehicule[2]);
-                           try
-                           {
-                              Y = Int32.Parse(donneesVehicule[3]);
-                              if (donneesVehicule[0].ToLower() == "voiture")
-                              {
-                                 messageQueue.Send(new Message(new Voiture(ID, X, Y), formatter));
-                              }
-                              else if (donneesVehicule[0].ToLower() == "moto")
-                              {
-                                 messageQueue.Send(new Message(new Moto(ID, X, Y), formatter));
-                              }
-                              else if (donneesVehicule[0].ToLower() == "camion")
-                              {
-                                 messageQueue.Send(new Message(new Camion(ID, X, Y), formatter));
-                              }
-                              else
-                              {
-                                 Console.WriteLine("Le type " + donneesVehicule[0] + " n'est pas valide à la ligne " + ligne);
-                              }
-                           }
-                           catch (Exception e)
-                           {
-                              Console.WriteLine("Le Y n'est pas valide à la ligne " + ligne);
-                           }
+                            ID = Int32.Parse(donneesVehicule[1]);
+                            try
+                            {
+                                X = Int32.Parse(donneesVehicule[2]);
+                                try
+                                {
+                                    Y = Int32.Parse(donneesVehicule[3]);
+                                    if (donneesVehicule[0].ToLower() == "voiture")
+                                    {
+                                        messageQueue.Send(new Message(new Voiture(ID, X, Y), formatter));
+                                    }
+                                    else if (donneesVehicule[0].ToLower() == "moto")
+                                    {
+                                        messageQueue.Send(new Message(new Moto(ID, X, Y), formatter));
+                                    }
+                                    else if (donneesVehicule[0].ToLower() == "camion")
+                                    {
+                                        messageQueue.Send(new Message(new Camion(ID, X, Y), formatter));
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Le type " + donneesVehicule[0] + " n'est pas valide à la ligne " + ligne);
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine("Le Y n'est pas valide à la ligne " + ligne);
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Le X n'est pas valide à la ligne " + ligne);
+                            }
                         }
                         catch (Exception)
                         {
-                           Console.WriteLine("Le X n'est pas valide à la ligne " + ligne);
+                            Console.WriteLine("Le ID n'est pas valide à la ligne " + ligne);
                         }
-                     }
-                     catch (Exception)
-                     {
-                        Console.WriteLine("Le ID n'est pas valide à la ligne " + ligne);
-                     }
-                  }
+                    }
                }
             }
             fichierMessage.Close();
