@@ -30,7 +30,9 @@
             <Button Content="X"
                     Height="30"
                     Width="30"
-                    Click="CloseWindow_Click"/>
+                    Click="CloseWindow_Click"
+                    Background="Red"
+                    Foreground="White"/>
         </StackPanel>
 
         <Border Grid.Row="1" Background="LightGray"/>

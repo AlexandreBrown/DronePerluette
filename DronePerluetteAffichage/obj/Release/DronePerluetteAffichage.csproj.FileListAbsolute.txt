@@ -1,0 +1,5 @@
+D:\DronePerluette\DronePerluetteAffichage\obj\Release\MainWindow.g.cs
+D:\DronePerluette\DronePerluetteAffichage\obj\Release\App.g.cs
+D:\DronePerluette\DronePerluetteAffichage\obj\Release\DronePerluetteAffichage_MarkupCompile.cache
+D:\DronePerluette\DronePerluetteAffichage\obj\Release\DronePerluetteAffichage_MarkupCompile.lref
+D:\DronePerluette\DronePerluetteAffichage\obj\Release\DronePerluetteAffichage.csprojResolveAssemblyReference.cache

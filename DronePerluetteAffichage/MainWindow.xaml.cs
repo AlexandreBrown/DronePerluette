@@ -18,7 +18,7 @@ namespace DronePerluetteAffichage
    /// </summary>
    public partial class MainWindow : Window
    {
-      public int SleepTime { get; set; } = 25;
+      public int SleepTimeDefault { get; set; } = 25;
       public List<Vehicule> LstVehicules { get; set; }
       public List<Image> LstImagesVehicules { get; set; }
       public int sizeImage = 200;
@@ -75,7 +75,8 @@ namespace DronePerluetteAffichage
                                         {
                                             if (message.Body.GetType().Name == typeof(int).Name)
                                             {
-                                                SleepTime = ((int)message.Body);
+                                                int sleepTime = ((int)message.Body);
+                                                await Task.Run(() => { Thread.Sleep(sleepTime); });
                                             }
                                             else
                                             {
@@ -83,7 +84,7 @@ namespace DronePerluetteAffichage
                                             }
                                         }
                                     }
-                                    await Task.Run(() => { Thread.Sleep(SleepTime); });
+                                    await Task.Run(() => { Thread.Sleep(SleepTimeDefault); });
                                 }
                             }
                        }
