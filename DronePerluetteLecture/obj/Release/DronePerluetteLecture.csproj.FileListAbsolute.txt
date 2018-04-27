@@ -5,3 +5,10 @@ D:\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.csproj
 D:\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.exe
 D:\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.pdb
 D:\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.csprojResolveAssemblyReference.cache
+D:\Max\DronePerluette\DronePerluetteLecture\bin\Release\DronePerluetteLecture.exe.config
+D:\Max\DronePerluette\DronePerluetteLecture\bin\Release\DronePerluetteLecture.exe
+D:\Max\DronePerluette\DronePerluetteLecture\bin\Release\DronePerluetteLecture.pdb
+D:\Max\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.csprojResolveAssemblyReference.cache
+D:\Max\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.csproj.CoreCompileInputs.cache
+D:\Max\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.exe
+D:\Max\DronePerluette\DronePerluetteLecture\obj\Release\DronePerluetteLecture.pdb

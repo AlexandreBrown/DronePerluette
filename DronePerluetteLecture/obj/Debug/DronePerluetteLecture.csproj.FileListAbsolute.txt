@@ -1,0 +1,7 @@
+D:\Max\DronePerluette\DronePerluetteLecture\bin\Debug\DronePerluetteLecture.exe.config
+D:\Max\DronePerluette\DronePerluetteLecture\bin\Debug\DronePerluetteLecture.exe
+D:\Max\DronePerluette\DronePerluetteLecture\bin\Debug\DronePerluetteLecture.pdb
+D:\Max\DronePerluette\DronePerluetteLecture\obj\Debug\DronePerluetteLecture.csproj.CoreCompileInputs.cache
+D:\Max\DronePerluette\DronePerluetteLecture\obj\Debug\DronePerluetteLecture.exe
+D:\Max\DronePerluette\DronePerluetteLecture\obj\Debug\DronePerluetteLecture.pdb
+D:\Max\DronePerluette\DronePerluetteLecture\obj\Debug\DronePerluetteLecture.csprojResolveAssemblyReference.cache

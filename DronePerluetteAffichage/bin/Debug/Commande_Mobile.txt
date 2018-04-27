@@ -13,7 +13,7 @@ camion,0,110,120
 camion,0,120,120
 camion,0,130,120
 camion,0,140,120
-camion,0,150,120
+camion;0;150;120
 camion,0,160,120
 camion,0,170,120
 camion,0,180,120

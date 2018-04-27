@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Max\DronePerluette\DronePerluetteAffichage\obj\Release\
+D:\Max\DronePerluette\DronePerluetteAffichage\obj\Debug\
 DronePerluetteAffichage
 none
 false
-TRACE
+DEBUG;TRACE
 D:\Max\DronePerluette\DronePerluetteAffichage\App.xaml
 11151548125
 
 5-2017746502
-16-1501619346
+1624429078
 MainWindow.xaml;
 
 False
